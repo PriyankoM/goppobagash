@@ -23,11 +23,11 @@
 
 <link href="{% static "/css/widget.css" %}" rel="stylesheet">
 
-<link href="{% static"/css/owl.carousel.css" %}" rel="stylesheet">
+<link href="{% static "/css/owl.carousel.css" %}" rel="stylesheet">
 
-<link href="{% static"/css/responsive.css" %}" rel="stylesheet">
+<link href="{% static "/css/responsive.css" %}" rel="stylesheet">
 
-<link href="{% static"/js/dl-menu/component.css" %}" rel="stylesheet">
+<link href="{% static "/js/dl-menu/component.css" %}" rel="stylesheet">
 
 </head>
 <body>
@@ -61,19 +61,19 @@
                 <!--LOGO END-->
                 <div class="kode-navigation">
                     <ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="books.html">Our Books</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/aboutus">About Us</a></li>
+						<li><a href="/ourbooks">Our Books</a></li>
 						<li class="last"><a href="contact-us.html">Contact Us</a></li>
 					</ul>
                 </div>
 				<div id="kode-responsive-navigation" class="dl-menuwrapper">
 					<button class="dl-trigger">Open Menu</button>
 					<ul class="dl-menu">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="books.html">Our Books</a></li>
-						<li class="last"><a href="contact-us.html">Contact Us</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/aboutus">About Us</a></li>
+						<li><a href="/ourbooks">Our Books</a></li>
+						<li class="last"><a href="/contactus">Contact Us</a></li>
 					</ul>
 				</div>
             </div>
@@ -84,31 +84,31 @@
     <div class="kode-banner">
     	<ul class="bxslider">
         	<li>
-            	<img src="images/banner-1.png" alt="">
+            	<img src="{% static 'images/banner-1.png' %}" alt="">
                 <div class="kode-caption-2">
                 	<h5>Are you searching a book...?</h5>
                 	<h2>Biggest Goppo Bagish</h2>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam.ipsam voluptatem.</p>
                     <div class="caption-btns">
-                    	<a href="about-us.html">See More</a>
+                    	<a href="/aboutus">See More</a>
                        
                     </div>					
                 </div>
             </li>
             <li>
-            	<img src="images/banner-2.png" alt="">
+            	<img src="{% static 'images/banner-2.png' %}" alt="">
                 <div class="kode-caption-2">
                 	<h5>Are you searching a book...?</h5>
                 	<h2>Biggest Goppo Bagish</h2>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam.ipsam voluptatem.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudantium, totam rem aperiam. ipsam voluptatem.</p>
                     <div class="caption-btns">
-                    	<a href="about-us.html">See More</a>
+                    	<a href="/aboutus">See More</a>
                         
                     </div>					
                 </div>
             </li>
             <li>
-            	<img src="images/banner-3.png" alt="">
+            	<img src="{% static 'images/banner-3.png' %}" alt="">
                 <div class="kode-caption-2">
                 	<h5>Are you searching a book...?</h5>
                 	<h2>Biggest Goppo Bagish</h2>
@@ -1764,7 +1764,7 @@
                             <h2>Information</h2>
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="/aboutus">About Us</a></li>
                                 <li><a href="books.html">Our Books</a></li>
                                 <li class="last"><a href="contact-us.html">Contact Us</a></li>
                             </ul>
@@ -1825,22 +1825,22 @@
 </div>
 <!--WRAPPER END-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/static/js/jquery.min.js"></script>
+<script src="{% static '/js/jquery.min.js' %}" ></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/static/js/modernizr.custom.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/jquery.bxslider.min.js"></script>
-<script src="/static/js/bootstrap-slider.js"></script>
-<script src="/static/js/waypoints.min.js"></script> 
-<script src="/static/js/jquery.counterup.min.js"></script>
-<script src="/static/js/owl.carousel.js"></script>
-<script src="/static/js/dl-menu/modernizr.custom.js"></script>
-<script src="/static/js/dl-menu/jquery.dlmenu.js"></script>
-<script type="text/javascript" src="/static/lib/hash.js"></script>
-<script type="text/javascript" src="/static/lib/booklet-lib.js"></script>
-<script src="/static/js/jquerypp.custom.js"></script>
-<script src="/static/js/jquery.bookblock.js"></script>
+<script src="{% static '/js/modernizr.custom.js' %}"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static '/js/bootstrap-slider.js' %}"></script>
+<script src="{% static '/js/waypoints.min.js' %}"></script> 
+<script src="{% static '/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static '/js/owl.carousel.js' %}"></script>
+<script src="{% static '/js/dl-menu/modernizr.custom.js' %}"></script>
+<script src="{% static '/js/dl-menu/jquery.dlmenu.js' %}"></script>
+<script type="text/javascript" src="{% static '/lib/hash.js' %}"></script>
+<script type="text/javascript" src="{% static '/lib/booklet-lib.js' %}"></script>
+<script src="{% static '/js/jquerypp.custom.js' %}"></script>
+<script src="{% static '/js/jquery.bookblock.js' %}"></script>
 <script src="../../../maps/api/js?v=3.exp&sensor=false"></script>
-<script src="/static/js/functions.js"></script>
+<script src="{% static '/js/functions.js' %}"></script>
 </body>
 </html>

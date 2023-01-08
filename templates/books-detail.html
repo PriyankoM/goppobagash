@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Goppo Bagish</title>
+{% load static %}
+{% comment %} <link href="style.css" rel="stylesheet">
+
+<link href="css/themetypo.css" rel="stylesheet">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<link href="css/color.css" rel="stylesheet">
+
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<link href="css/jquery.bxslider.css" rel="stylesheet">
+
+<link href="css/bootstrap-slider.css" rel="stylesheet">
+
+<link href="css/widget.css" rel="stylesheet">
+
+<link href="css/owl.carousel.css" rel="stylesheet">
+
+<link href="css/responsive.css" rel="stylesheet">
+
+<link href="js/dl-menu/component.css" rel="stylesheet"> {% endcomment %}
+
+<link href="{% static "/style.css" %}" rel="stylesheet" type="">
+
+<link href="{% static "/css/themetypo.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/bootstrap.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/color.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/font-awesome.min.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/jquery.bxslider.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/bootstrap-slider.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/widget.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/owl.carousel.css" %}" rel="stylesheet">
+
+<link href="{% static "/css/responsive.css" %}" rel="stylesheet">
+
+<link href="{% static "/js/dl-menu/component.css" %}" rel="stylesheet">
+
+</head>
+<body>
+<div id="loader-wrapper">
+	<div id="loader"></div>
+
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+
+</div>
+<!--WRAPPER START-->
+<div class="wrapper kode-header-class-3">
+	<!--HEADER START-->
+	<header class="header-1">
+    	<div class="top-strip">
+        	<div class="container">
+            	<div class="pull-left">
+                	<p>Welcome to Goppo Bagish</p>
+                </div>
+            	<ul class="my-account">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                            
+                    </ul>
+            </div>
+        </div>
+        <div class="logo-container">
+        	<div class="container">
+            	<!--LOGO START-->
+            	<div class="logo">
+                    <a href="#"><img style="width: 50px;" src="{% static 'images/logo-2.png'%}" alt=""></a>
+                </div>
+                <!--LOGO END-->
+                <div class="kode-navigation">
+                    <ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/aboutus">About Us</a></li>
+						<li><a href="/ourbooks">Our Books</a></li>
+						<li class="last"><a href="/contactus">Contact Us</a></li>
+					</ul>
+                </div>
+				<div id="kode-responsive-navigation" class="dl-menuwrapper">
+					<button class="dl-trigger">Open Menu</button>
+					<ul class="dl-menu">
+						<li><a href="/">Home</a></li>
+						<li><a href="/aboutus">About Us</a></li>
+						<li><a href="/ourbooks">Our Books</a></li>
+						<li class="last"><a href="/contactus">Contact Us</a></li>
+					</ul>
+				</div>
+            </div>
+        </div>
+    </header>
+    <!--HEADER END-->
+    <!--BANNER START-->
+    <div class="kode-inner-banner">
+    	<div class="kode-page-heading">
+        	<h2>Product Detail</h2>
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Library</a></li>
+              <li class="active">Product Detail</li>
+            </ol>
+        </div>
+    </div>
+    <!--BANNER END-->
+    
+    <!--CONTENT START-->
+    <div class="kode-content padding-tb-50">
+    	<div class="container">
+            <div class="row">
+               
+                <div class="col-md-12">
+                    <!--BOOK DETAIL START-->
+                    <div class="lib-book-detail">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="kode-thumb">
+                                    <img src="{{mybookdata.image}}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="kode-text">
+                                	<h2>{{mybookdata.name}}</h2>
+                                    <div class="product-review">
+                                        <div class="rating">
+                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                        <p>4 Customer reveiws</p>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>$ {{mybookdata.price}}</h4>
+                                        <p>Author : <span class="color">{{mybookdata.author}}</span></p>
+                                    </div>
+                                    <div class="book-text">
+                                    	<p>{{mybookdata.description}}</p>
+                                    </div>
+                                    {% comment %} <div class="book-text">
+                                    	<p>Category: Books.</p>
+                                        <p>Tag: books.</p>
+                                        <p>Author: Daniel Abraham</p>
+                                        <p>Publisher: Journal inc</p>
+                                        <p>Product ID: 1100</p>
+                                    </div> {% endcomment %}
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BOOK DETAIL END-->
+                    <!--PRODUCT REVIEW TABS START-->
+                    <div class="product-review-tabs">
+                <!--NAV TABS START-->
+               
+                <!--NAV TABS END-->
+                <!--TAB PANEL START-->
+              
+                <!--TAB PANEL END-->
+            </div>
+                    <!--PRODUCT REVIEW TABS END-->
+                    <!--RELATED PRODUCTS START-->
+                    <div class="lib-related-products">
+                        <h2>Related Books</h2>
+                        <div class="row">
+                            <!--PRODUCT GRID START-->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="best-seller-pro">
+                                     <figure>
+                            	<img src="images/book7.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                            	<h3><a href="#">Burnt Siena</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                            	<h3>Art History Mystery</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Sara Wisseman</p>
+                                <p class="price">$334.50</p>
+                                <a href="#" class="add-to-cart">CONTACT US</a>
+                                <br>
+                                <br>
+                                 <a href="books-detail.html" class="add-to-cart">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PRODUCT GRID END-->
+                            <!--PRODUCT GRID START-->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="best-seller-pro">
+                                    <figure>
+                            	<img src="images/book8.png" alt="">
+                            </figure>
+                            <div class="kode-text">
+                            	<h3><a href="#">Chrysalis</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                            	<h3>The Brave Girl</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>William S.</p>
+                                <p class="price">$24.75</p>
+                                <a href="#" class="add-to-cart">CONTACT US</a>
+                                <br>
+                                <br>
+                                 <a href="books-detail.html" class="add-to-cart">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PRODUCT GRID END-->
+                            <!--PRODUCT GRID START-->
+                            <div class="col-md-4">
+                                <div class="best-seller-pro">
+                                    <figure>
+                            	<img alt="" src="images/book4.png">
+                            </figure>
+                            <div class="kode-text">
+                            	<h3><a href="#">Dead Water</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                            	<h3>Dead Water in the Sea</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p>Ann Grannger</p>
+                                <p class="price">$777.75</p>
+                                <a href="#" class="add-to-cart">CONTACT US</a>
+                               <br>
+                               <br>
+                                <a href="books-detail.html" class="add-to-cart">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PRODUCT GRID END-->
+                        </div>
+                    </div>
+                    <!--RELATED PRODUCTS END-->
+                </div>
+            </div>
+        </div>
+        </div> 
+	<section class="kode-uptodate">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h2>stay up-to-dated</h2>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="social-icons">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<div class="input-container">
+								<input type="text" placeholder="Your E-mail Address" id="sub-2">
+								<button>Subscribe</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!--CONTENT END-->
+    <footer class="footer-3">
+        <div class="container">
+            <div class="row">
+                <!--CATEGORY WIDGET START-->
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget widget-categories">
+                        <h2>Information</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="books.html">Our Books</a></li>
+                            <li class="last"><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--CATEGORY WIDGET END-->
+                <!--LATEST NEWS WIDGET START-->
+                <div class="col-md-3 col-sm-6">
+                    
+                </div>
+                <!--LATEST NEWS WIDGET END-->
+                <!--TWITTER WIDGET START-->
+                <div class="col-md-3 col-sm-6">
+               
+                </div>
+                <!--TWITTER WIDGET END-->
+                
+                <!--NEWSLETTER START-->
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget widget-contact-info">
+                        <h2>get in touch</h2>
+                        <ul>
+                            <li>
+                                <i class="fa fa-paper-plane"></i>
+                                <div class="kode-text">
+                                    <h4>Address</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <div class="kode-text">
+                                    <h4>phone Number</h4>
+                                    <p>+55(62) 55258-4570</p>
+                                    <p>+55(62) 55258-4570</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o"></i>
+                                <div class="kode-text">
+                                    <h4>Email Address</h4>
+                                    <a href="#">Info@thelibrary.com</a>
+                                </div>
+                            </li>
+                        </ul>                        
+                    </div>
+                </div>
+                <!--NEWSLETTER START END-->
+            </div>
+        </div>
+    </footer>
+    <div class="copyrights">
+    	<div class="container">
+        	<p>Copyrights © 2022 Goppo Bagish. All rights reserved Design & Development By commixwebstudios</p>
+            <div class="cards"><img src="images/cards.png" alt=""></div>
+        </div>
+    </div>
+</div>
+<!--WRAPPER END-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-slider.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script> 
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'js/dl-menu/modernizr.custom.js' %}"></script>
+<script src="{% static 'js/dl-menu/jquery.dlmenu.js' %}"></script>
+<script src="{% static 'js/functions.js' %}"></script>
+</body>
+</html>

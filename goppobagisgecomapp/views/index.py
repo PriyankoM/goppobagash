@@ -35,6 +35,8 @@ class Index(View):
     def get(self , request):
         return HttpResponseRedirect(f'/store{request.get_full_path()[1:]}')
 
+
+
 def store(request):
     cart = request.session.get('cart')
     if not cart:
@@ -42,16 +44,34 @@ def store(request):
     products = None
     categories = Category.get_all_categories()
     categoryID = request.GET.get('category')
+    bookdetailspage=request.GET.get('bookdetails')
+    if bookdetailspage:
+        mybookdata={}
+        bookroducts=Products.get_products_by_id(bookdetailspage)
+        mybookdata["mybookdata"]=bookroducts[0]
+        print(bookroducts[0])
+        # productCatagory=
+        return render(request, 'books-detail.html', mybookdata)
     if categoryID:
         products = Products.get_all_products_by_categoryid(categoryID)
     else:
-        products = Products.get_all_products();
+        products = Products.get_all_products()
 
     data = {}
     data['products'] = products
     data['categories'] = categories
-
     print('you are : ', request.session.get('email'))
     return render(request, 'index.html', data)
+
+
+def ourbooks(request):
+    data={}
+    products = Products.get_all_products()
+    data['products'] = products
+    print(data['products'])
+    return render(request, "books.html",data)
+
+
+
 
 

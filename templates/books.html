@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Goppo Bagish</title>
+    {% load static %} {% comment %} <link href="{% static "/style.css" %}"
+    rel="stylesheet" type="">
+
+    <link href="css/themetypo.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <link href="css/color.css" rel="stylesheet" />
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-slider.css" rel="stylesheet" />
+
+    <link href="css/widget.css" rel="stylesheet" />
+
+    <link href="css/owl.carousel.css" rel="stylesheet" />
+
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <link href="js/dl-menu/component.css" rel="stylesheet" />
+    {% endcomment %} <link href="{% static "/style.css" %}" rel="stylesheet"
+    type=""> <link href="{% static "/css/themetypo.css" %}" rel="stylesheet">
+    <link href="{% static "/css/bootstrap.css" %}" rel="stylesheet"> <link
+    href="{% static "/css/color.css" %}" rel="stylesheet"> <link href="{% static
+    "/css/font-awesome.min.css" %}" rel="stylesheet"> <link href="{% static
+    "/css/jquery.bxslider.css" %}" rel="stylesheet"> <link href="{% static
+    "/css/bootstrap-slider.css" %}" rel="stylesheet"> <link href="{% static
+    "/css/widget.css" %}" rel="stylesheet"> <link href="{% static
+    "/css/owl.carousel.css" %}" rel="stylesheet"> <link href="{% static
+    "/css/responsive.css" %}" rel="stylesheet"> <link href="{% static
+    "/js/dl-menu/component.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!--WRAPPER START-->
+    <div class="wrapper kode-header-class-3">
+      <!--HEADER START-->
+      <header class="header-1">
+        <div class="top-strip">
+          <div class="container">
+            <div class="pull-left">
+              <p>Welcome to Goppo Bagish</p>
+            </div>
+            <ul class="my-account">
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i> </a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="logo-container">
+          <div class="container">
+            <!--LOGO START-->
+            <div class="logo">
+              <a href="#"
+                ><img style="width: 50px" src="images/logo-2.png" alt=""
+              /></a>
+            </div>
+            <!--LOGO END-->
+            <div class="kode-navigation">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/ourbooks">Our Books</a></li>
+                <li class="last"><a href="/contact-us">Contact Us</a></li>
+              </ul>
+            </div>
+            <div id="kode-responsive-navigation" class="dl-menuwrapper">
+              <button class="dl-trigger">Open Menu</button>
+              <ul class="dl-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/ourbooks">Our Books</a></li>
+                <li class="last"><a href="contact-us.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--HEADER END-->
+      <!--BANNER START-->
+      <div class="kode-inner-banner">
+        <div class="kode-page-heading">
+          <h2>Book Library</h2>
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Book Library</a></li>
+          </ol>
+        </div>
+      </div>
+      <!--BANNER END-->
+
+      <!--CONTENT START-->
+      <!--CONTENT START-->
+      <div class="kode-content padding-tb-50">
+        <!--TOP AUTHERS START-->
+        <div class="container">
+          <div class="kode-product-filter"></div>
+          <div class="row">
+            {%for product in products%}
+            <!--PRODUCT GRID START-->
+            <div class="col-md-3 col-sm-6">
+              <div class="best-seller-pro">
+                <figure>
+                  <img src="{{product.image}}" alt="" />
+                </figure>
+                <div class="kode-text">
+                  <h3>{{product.name}}</h3>
+                </div>
+                <div class="kode-caption">
+                  <h3>{{product.author}}</h3>
+                  <div class="rating">
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+                    ><span>☆</span>
+                  </div>
+                  <p>{{product.author}}</p>
+                  <p class="price">{{product.price}}</p>
+                  <a href="/?bookdetails={{product.id}}" class="add-to-cart"
+                    >Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!--PRODUCT GRID END-->
+            <!--PRODUCT GRID START-->
+            <!--PRODUCT GRID END-->
+          </div>
+          <!--PAGINATION START-->
+          <nav>
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!--PAGINATION END-->
+        </div>
+        <!--TOP AUTHERS END-->
+      </div>
+      <section class="kode-uptodate">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h2>stay up-to-dated</h2>
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="social-icons">
+                    <ul>
+                      <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="input-container">
+                    <input
+                      type="text"
+                      placeholder="Your E-mail Address"
+                      id="sub-2"
+                    />
+                    <button>Subscribe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--CONTENT END-->
+      <footer class="footer-3">
+        <div class="container">
+          <div class="row">
+            <!--CATEGORY WIDGET START-->
+            <div class="col-md-3 col-sm-6">
+              <div class="widget widget-categories">
+                <h2>Information</h2>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="/aboutus">About Us</a></li>
+                  <li><a href="books.html">Our Books</a></li>
+                  <li class="last"><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <!--CATEGORY WIDGET END-->
+            <!--LATEST NEWS WIDGET START-->
+            <div class="col-md-3 col-sm-6"></div>
+            <!--LATEST NEWS WIDGET END-->
+            <!--TWITTER WIDGET START-->
+            <div class="col-md-3 col-sm-6"></div>
+            <!--TWITTER WIDGET END-->
+
+            <!--NEWSLETTER START-->
+            <div class="col-md-3 col-sm-6">
+              <div class="widget widget-contact-info">
+                <h2>get in touch</h2>
+                <ul>
+                  <li>
+                    <i class="fa fa-paper-plane"></i>
+                    <div class="kode-text">
+                      <h4>Address</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    <div class="kode-text">
+                      <h4>phone Number</h4>
+                      <p>+55(62) 55258-4570</p>
+                      <p>+55(62) 55258-4570</p>
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa fa-envelope-o"></i>
+                    <div class="kode-text">
+                      <h4>Email Address</h4>
+                      <a href="#">Info@thelibrary.com</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--NEWSLETTER START END-->
+          </div>
+        </div>
+      </footer>
+      <div class="copyrights">
+        <div class="container">
+          <p>
+            Copyrights © 2022 Goppo Bagish. All rights reserved Design &
+            Development By commixwebstudios
+          </p>
+          <div class="cards"><img src="images/cards.png" alt="" /></div>
+        </div>
+      </div>
+    </div>
+    <!--WRAPPER END-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/dl-menu/modernizr.custom.js' %}"></script>
+    <script src="{% static '/js/dl-menu/jquery.dlmenu.js' %}"></script>
+    <script src="{% static '/js/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static '/js/bootstrap-slider.js' %}"></script>
+    <script src="{% static '/js/waypoints.min.js' %}"></script>
+    <script src="{% static '/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static '/js/functions.js' %}"></script>
+  </body>
+</html>

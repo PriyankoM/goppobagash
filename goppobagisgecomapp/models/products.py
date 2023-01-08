@@ -1,15 +1,17 @@
 from django.db import models
 from .category import Category
 class Products(models.Model):
+    author=models.CharField(max_length=100,default="no Author")
     name = models.CharField(max_length=60)
     price= models.IntegerField(default=0)
-    category= models.ForeignKey(Category,on_delete=models.CASCADE,default=1 )
+    category= models.ForeignKey(Category,on_delete=models.CASCADE,default=1)
     description= models.CharField(max_length=250, default='', blank=True, null= True)
     image= models.ImageField(upload_to='uploads/products/')
 
     @staticmethod
     def get_products_by_id(ids):
-        return Products.objects.filter (id__in=ids)
+        return Products.objects.filter(id__in=ids).values()
+    
     @staticmethod
     def get_all_products():
         return Products.objects.all()
@@ -19,4 +21,4 @@ class Products(models.Model):
         if category_id:
             return Products.objects.filter (category=category_id)
         else:
-            return Products.get_all_products();
+            return Products.get_all_products()
