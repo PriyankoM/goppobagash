@@ -146,7 +146,7 @@ STATIC_ROOT = "/home/xmu85ybupads/public_html/static/"
 # MEDIA_URL = "/uploads/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
-MEDIA_URL = "/"
+MEDIA_URL = "/uploads"
 MEDIA_ROOT = BASE_DIR
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static/'),
