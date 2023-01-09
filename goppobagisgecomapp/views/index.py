@@ -45,6 +45,11 @@ def store(request):
     categories = Category.get_all_categories()
     categoryID = request.GET.get('category')
     bookdetailspage=request.GET.get('bookdetails')
+
+    if request.GET.get('orderbook'):
+        a=request.GET.get('orderbook')
+        return HttpResponseRedirect(f'/orderbook?orderbook={a}')
+
     if bookdetailspage:
         mybookdata={}
         bookroducts=Products.get_products_by_id(bookdetailspage)
