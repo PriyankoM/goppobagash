@@ -1,5 +1,6 @@
 from django.db import models
 from .category import Category
+from django.core.paginator import Paginator
 class Products(models.Model):
     author=models.CharField(max_length=100,default="no Author")
     name = models.CharField(max_length=60)
@@ -12,7 +13,7 @@ class Products(models.Model):
     @staticmethod
     def get_products_by_id(ids):
         return Products.objects.filter(id__in=ids).values()
-    
+
     @staticmethod
     def get_all_products():
         return Products.objects.all()
