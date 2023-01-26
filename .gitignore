@@ -1,1 +1,5 @@
 db.sqlite3
+__pycache__
+goppobagisgecomapp/__pycache__
+goppobagish/__pycache__
+goppobagisgecomapp/migrations
