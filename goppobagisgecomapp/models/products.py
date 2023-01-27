@@ -4,11 +4,12 @@ from django.core.paginator import Paginator
 class Products(models.Model):
     author=models.CharField(max_length=100,default="no Author")
     name = models.CharField(max_length=60)
-    price= models.IntegerField(default=0)
+    price= models.FloatField(default=0.0)
     Discount=models.FloatField(default=0.0,verbose_name="Discount Percentage")
     category= models.ForeignKey(Category,on_delete=models.CASCADE,default=1)
     description= models.CharField(max_length=250, default='', blank=True, null= True)
     image= models.ImageField(upload_to='uploads/products/')
+    DeliveryCharge=models.IntegerField(default=10,blank=True)
 
     @staticmethod
     def get_products_by_id(ids):

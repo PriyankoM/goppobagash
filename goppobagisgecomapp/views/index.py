@@ -53,7 +53,12 @@ def store(request):
         mybookdata={}
         bookroducts=Products.get_products_by_id(bookdetailspage)
         mybookdata["mybookdata"]=bookroducts[0]
-        print(bookroducts[0])
+        orginalPrice = bookroducts[0]['price']
+        discountPercentage = bookroducts[0]['Discount']
+        print(bookroducts[0]['Discount'])
+        totalAmount = round(orginalPrice-((discountPercentage/100)*orginalPrice), 2)
+        mybookdata['totalAmount']=totalAmount+bookroducts[0]['DeliveryCharge']
+        mybookdata['discountPrice']=totalAmount
         # productCatagory=
         return render(request, 'books-detail.html', mybookdata)
     if categoryID:

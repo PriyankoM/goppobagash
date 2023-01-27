@@ -11,7 +11,7 @@ urlpatterns = [
     path('ourbooks',ourbooks,name="ourbook"),
     path('orderbook',OrderBook.as_view(),name="oderbook"),
     path('aboutus',aboutus,name="aboutus"),
-
+    
     # path('orders', auth_middleware(OrderView.as_view()), name='orders')
 ]
 

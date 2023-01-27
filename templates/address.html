@@ -1,50 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    {% load static %}
-    <link  href="{% static "/css/addressstyle.css" %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="row">
-    <div class="col-75">
-      <div class="container">
-        <form action="/orderbook" method="post">
-          {% csrf_token %}
-          
-          <div class="row">
-            <div class="col-50">
-              <h3>Billing Address</h3>
-              <input style="display:None;" type="text" name="bookid" value="{{bookData.id}}" required>
-              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-              <input type="text" id="fname" name="firstname" required>
-              <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input type="text" id="email" name="email" required>
-              <label for="phoneNumber"><i class="fa fa-envelope"></i>Phone Number</label>
-              <input type="text" id="phoneNumber" name="phoneNumber" required>
-              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input type="text" id="adr" name="address" >
-              <label for="city/Vill"><i class="fa fa-institution"></i> City/Vill</label>
-              <input type="text" id="city/Vill" name="city/Vill" required>
-              <label for="P.O."><i class="fa fa-institution"></i> P.O.</label>
-              <input type="text" id="P.O." name="P.O." required>
-  
-              <div class="row">
-                <div class="col-50">
-                  <label for="state">State</label>
-                  <input type="text" id="state" name="state" required>
+    {% load static %} <link href="{% static "/css/addressstyle.css" %}"
+    rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+          <form action="/orderbook" method="post">
+            {% csrf_token %}
+
+            <div class="row">
+              <div class="col-50">
+                <h3>Billing Address</h3>
+                <input
+                  style="display: None"
+                  type="text"
+                  name="bookid"
+                  value="{{bookData.id}}"
+                  required
+                />
+                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                <input type="text" id="fname" name="firstname" required />
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" required />
+                <label for="phoneNumber"
+                  ><i class="fa fa-envelope"></i>Phone Number</label
+                >
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  required
+                />
+                <label for="adr"
+                  ><i class="fa fa-address-card-o"></i> Address</label
+                >
+                <input type="text" id="adr" name="address" />
+                <label for="city/Vill"
+                  ><i class="fa fa-institution"></i> City/Vill</label
+                >
+                <input type="text" id="city/Vill" name="city/Vill" required />
+                <label for="P.O."><i class="fa fa-institution"></i> P.O.</label>
+                <input type="text" id="P.O." name="P.O." required />
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" required />
+                  </div>
+                  <div class="col-50">
+                    <label for="Pin">Pin</label>
+                    <input type="text" id="Pin" name="Pin" required />
+                  </div>
                 </div>
-                <div class="col-50">
-                  <label for="Pin">Pin</label>
-                  <input type="text" id="Pin" name="Pin" required>
-                </div>
+                <button id="rzp-button1"  class="btn btn-primary">
+                  Confirm identity
+                </button>
+              
+                <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                <script>
+                  var options = {
+                    key: "rzp_test_begQBGyjyI3ha1", // Enter the Key ID generated from the Dashboard
+                    amount: "{{totalAmountPaisa}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    currency: "INR",
+                    name: "Goppobagash",
+                    description: "Test Transaction",
+                    image: "https://example.com/your_logo",
+                    //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    handler: function (response) {
+                      alert(response.razorpay_payment_id);
+                      
+                      alert(response.razorpay_signature);
+                    },
+                    prefill: {
+                      name: document.getElementById("fname").value,
+                      email: document.getElementById("email").value,
+                      contact:document.getElementById("phoneNumber").value ,
+                    },
+                    notes: {
+                      address: "Razorpay Corporate Office",
+                    },
+                    theme: {
+                      color: "#3399cc",
+                    },
+                  };
+                  var rzp1 = new Razorpay(options);
+                  rzp1.on("payment.failed", function (response) {
+                    alert(response.error.code);
+                    alert(response.error.description);
+                    alert(response.error.source);
+                    alert(response.error.step);
+                    alert(response.error.reason);
+                    alert(response.error.metadata.order_id);
+                    alert(response.error.metadata.payment_id);
+                  });
+                  document.getElementById("rzp-button1").onclick = function (
+                    e
+                  ) {
+                    rzp1.open();
+                    e.preventDefault();
+                  };
+                </script>
               </div>
-              <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
             </div>
-  </div>
-      
-</body>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

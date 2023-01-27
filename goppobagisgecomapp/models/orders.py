@@ -21,6 +21,9 @@ class Orders(models.Model):
     phone = models.CharField (max_length=50, default='', blank=True)
     date = models.DateField (default=datetime.datetime.today)
     status = models.BooleanField (default=False)
+    paymentId=models.CharField(max_length=400,default="",blank=False)
+    orderId=models.CharField(max_length=400,default="",blank=False)
+    SignatureId=models.CharField(max_length=600,default="",blank=False)
 
     def placeOrder(self):
         self.save()

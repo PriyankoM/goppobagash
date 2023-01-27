@@ -142,8 +142,15 @@
                                         <p>4 Customer reveiws</p>
                                     </div>
                                     <div class="product-price">
+                                        {% if mybookdata.Discount == 0.0 %}
                                         <h4>$ {{mybookdata.price}}</h4>
-                                        <p>Author : <span class="color">{{mybookdata.author}}</span></p>
+                                        {% else %}
+                                        <p><s>$ {{mybookdata.price}}</s></p>
+                                        <h4>$ {{discountPrice}}</h4> 
+                                        {% endif %}
+                                        <p>Author / Editor : <span class="color">{{mybookdata.author}}</span></p>
+                                        <p>Delivery Charge : <span class="color">{{mybookdata.DeliveryCharge}}</span></p>
+                                        <p>Total Amount : <span class="color">{{totalAmount}}</span></p>
                                     </div>
                                     <div class="book-text">
                                     	<p>{{mybookdata.description}}</p>
