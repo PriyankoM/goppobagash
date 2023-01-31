@@ -3,6 +3,7 @@ from .views.login import Login , logout
 from .views.index import Index,store,ourbooks
 from .views.aboutus import aboutus
 from .views.orderbook import OrderBook
+from .views.contactus import ContactUs
 
 urlpatterns = [
     path('', Index.as_view(), name='homepage'),
@@ -11,7 +12,7 @@ urlpatterns = [
     path('ourbooks',ourbooks,name="ourbook"),
     path('orderbook',OrderBook.as_view(),name="oderbook"),
     path('aboutus',aboutus,name="aboutus"),
-    
+    path('contactus',ContactUs.as_view(),name="contact")
     # path('orders', auth_middleware(OrderView.as_view()), name='orders')
 ]
 
